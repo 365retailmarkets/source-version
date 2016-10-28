@@ -49,10 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="build\SourceVersion.props">
+    <None Include="build\SourceVersion.WebForms.props">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="build\SourceVersion.targets">
+    <None Include="build\SourceVersion.WebForms.targets">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="content\web.config.uninstall.xdt">

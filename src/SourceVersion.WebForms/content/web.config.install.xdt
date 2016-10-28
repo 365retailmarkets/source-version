@@ -13,7 +13,7 @@
         name="Version"
 				verb="GET"
 				path="Version.ashx"
-				type="SourceVersion.Version, SourceVersion"
+				type="SourceVersion.WebForms.Version, SourceVersion.WebForms"
 				resourceType="Unspecified" />
 		</handlers>
 	</system.webServer>
