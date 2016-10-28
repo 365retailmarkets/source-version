@@ -63,7 +63,7 @@
     </None>
     <None Include="Package.ps1" />
     <None Include="packages.config" />
-    <None Include="SourceVersion.nuspec">
+    <None Include="SourceVersion.WebForms.nuspec">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
