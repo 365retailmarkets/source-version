@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+	<system.webServer>
+    <handlers xdt:Transform="InsertIfMissing" />
+		<handlers>
+      <add
+        name="Version"
+        xdt:Transform="Remove"
+        xdt:Locator="Match(name)" />
+			<add 
+        xdt:Transform="Insert" 
+        xdt:Locator="Match(name)"
+        name="Version"
+				verb="GET"
+				path="Version.ashx"
+				type="SourceVersion.Version, SourceVersion"
+				resourceType="Unspecified" />
+		</handlers>
+	</system.webServer>
+</configuration>

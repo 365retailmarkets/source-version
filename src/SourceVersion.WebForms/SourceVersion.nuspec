@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Jeff Pierson</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/365retailmarkets/source-version</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Collects source control version information and makes available at runtime.</description>
+    <releaseNotes>Initial version supporting TFS and WebForms</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>source version tfs git</tags>
+  </metadata>
+  <files>
+    <!-- Include everything in \build -->
+    <file src="build\**"
+          target="build" />
+
+    <!-- Include everything in \content -->
+    <file src="content\**"
+          target="content" />
+  </files>
+</package>
