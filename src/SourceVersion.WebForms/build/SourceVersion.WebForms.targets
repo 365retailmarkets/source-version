@@ -1,26 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Target Name="BeforeBuild">
-    <Message Text="Running BeforeBuild Target"
-             Importance="high"/>
+  <UsingTask TaskName="TfsVersionTask"
+             AssemblyFile="..\lib\net45\SourceVersion.TfsVersionTargets.dll"/>
+  <Target Name="GenerateTempAssemblyInfo" BeforeTargets="BeforeBuild">
+    <Message Text="GenerateTempAssemblyInfo in SourceVersion.WebForms.targets"
+             Importance="High"/>
+    <TfsVersionTask SourceDirectory="$(MSBuildProjectDirectory)"
+                    IntermediateOutputPath="$(IntermediateOutputPath)">
+      <Output TaskParameter="AssemblyInfoTempFilePath"
+              PropertyName="GeneratedAssemblyInfo" />
+    </TfsVersionTask>
+    <Message Text="Generated the file $(GeneratedAssemblyInfo)"
+             Importance="High"/>
+    <ItemGroup>
+      <Compile Include="$(GeneratedAssemblyInfo)" />
+    </ItemGroup>
   </Target>
-  <Target Name="BeforeBuild">
-    <PropertyGroup>
-      <ProgramFiles32>$(MSBuildProgramFiles32)</ProgramFiles32>
-      <VS14Dir>$(ProgramFiles32)\Microsoft Visual Studio 14.0</VS14Dir>
-      <TF Condition="Exists('$(VS14Dir)')">$(VS14Dir)\Common7\IDE\TF.exe</TF>
-      <TfCommand>"$(TF)" vc info . &gt; version.txt</TfCommand>
-    </PropertyGroup>
-    <Message Importance="High"
-             Text="Creating version.txt: $(TfCommand)" />
-    <Exec Command="$(TfCommand)">
-    </Exec>
-  </Target>
-  <ItemGroup>
-    <Content Include="version.txt" />
-    <Content Include="$(ProjectDir)\version.txt">
-      <Link>%(Filename)%(Extension)</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 </Project>

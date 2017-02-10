@@ -13,6 +13,10 @@
     <releaseNotes>Initial version supporting TFS and WebForms</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>source version tfs git</tags>
+
+    <references>
+      <reference file="SourceVersion.WebForms.dll" />
+    </references>
   </metadata>
   <files>
     <!-- Include everything in \build -->
@@ -22,5 +26,13 @@
     <!-- Include everything in \content -->
     <file src="content\**"
           target="content" />
+
+    <!--<file src="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.14.102.0\lib\net45\Microsoft.TeamFoundation.VersionControl.Client.dll" target="lib\net45"/>-->
+    <file src="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.14.102.0\lib\net45\*" target="lib\net45"/>
+    <file src="..\packages\Microsoft.VisualStudio.Services.Client.14.102.0\lib\net45\*" target="lib\net45"/>
+    <file src="..\packages\Newtonsoft.Json.6.0.8\lib\net45\*" target="lib\net45"/>
+
+
   </files>
+
 </package>
