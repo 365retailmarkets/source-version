@@ -6,7 +6,9 @@
     <Message Text="GenerateTempAssemblyInfo in SourceVersion.WebForms.targets"
              Importance="High"/>
     <TfsVersionTask SourceDirectory="$(MSBuildProjectDirectory)"
-                    IntermediateOutputPath="$(IntermediateOutputPath)">
+                    IntermediateOutputPath="$(IntermediateOutputPath)"
+                    VersionFormat="$(VersionFormat)"
+					          AssemblyInformationalFormat="$(AssemblyInformationalFormat)">
       <Output TaskParameter="AssemblyInfoTempFilePath"
               PropertyName="GeneratedAssemblyInfo" />
     </TfsVersionTask>
